@@ -38,10 +38,24 @@
             animLoop.setFPS(60);
 
             $navLinks.on('click', function(e) {
-                
+                e.preventDefault();
+
+                var $this = $(this);
+                console.log($this.attr('data-index'));
+                // d.body.scrollTop = height * $this.attr('data-index');
+
+                var tween = new TWEEN.Tween( { y: d.body.scrollTop } )
+                .to( { y: height * $this.attr('data-index') }, 750 )
+                .easing( TWEEN.Easing.Cubic.Out )
+                .onUpdate( function () {
+                    d.body.scrollTop = this.y;
+                })
+                .start();
+
             });
 
             animLoop.add('scrollchecker', function() {
+                TWEEN.update();
                 top = d.body.scrollTop;
                 percent = top/bodyheight * 100;
                 current = Math.floor(percent / ratio);

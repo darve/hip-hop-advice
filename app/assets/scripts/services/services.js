@@ -15,6 +15,127 @@
         };
     }]);
 
+    app.factory('$scroller', ['$rootScope', function($rootScope){
+
+        /*
+        * Get a handle on the body element ( one that is happy in older browsers )
+        */
+        var b = (d.querySelector('.lte9') == null ) ? d.body : d.documentElement,
+            checkCounter = 0;
+
+        /*
+        * Expects a DOM element
+        * Returns an object representing that objects position on the page
+        * ( e.g. { left: xxx, top: xxx } )
+        */
+        var getOffset = function(target){
+
+            var docElem, 
+                elem = target,
+                doc = elem && elem.ownerDocument,
+                box = {
+                    top: 0,
+                    left: 0
+                };
+
+            docElem = doc.documentElement;
+
+            if (typeof elem.getBoundingClientRect !== undefined ) {
+                box = elem.getBoundingClientRect();
+            }
+            
+            return {
+                top: box.top + (w.pageYOffset || docElem.scrollTop) - (docElem.clientTop || 0),
+                left: box.left + (w.pageXOffset || docElem.scrollLeft) - (docElem.clientLeft || 0)
+            };
+        };
+
+        /*
+        * Tweens the scrolltop of the body element to a target amount
+        */
+        var scrollTo = function(target, offset){
+            var adjust = offset || (-40),
+                tween = new TWEEN.Tween( { y: b.scrollTop } )
+                .to( { y: getOffset(target).top+adjust }, 600 )
+                .easing( TWEEN.Easing.Cubic.Out )
+                .onUpdate( function () {
+                    b.scrollTop = this.y;
+                })
+                .start();
+        };
+
+        /*
+        * Broadcasts the current scrolltop of the body
+        */
+        var scrollCheck = function() {
+            checkCounter++;
+            if ( checkCounter % 24 === 0 ) {
+                $rootScope.$broadcast( 'scroll', currentScroll() );
+            }
+        };
+
+        /*
+        * Polyfill for getting the window width
+        */
+        var windowWidth = (function() {
+            if (typeof w.innerWidth !== 'undefined') {
+                return function() {
+                    return w.innerWidth;
+                };
+            } else {
+                var b = ('clientWidth' in d.documentElement) ? d.documentElement : d.body;
+                return function() {
+                    return b.clientWidth;
+                };
+            }
+        })();
+
+        /*
+        * Polyfill for getting the window height
+        */
+        var windowHeight = (function() {
+            if (typeof w.innerHeight !== 'undefined') {
+                return function() {
+                    return w.innerHeight;
+                };
+            } else {
+                var b = ('clientHeight' in d.documentElement) ? d.documentElement : d.body;
+                return function() {
+                    return b.clientHeight;
+                };
+            }
+        })();
+
+        /*
+        * Returns true if the top of the element has scrolled higher than half way up the viewable page
+        */
+        var isVisible = function(elem){
+            var offset = getOffset(elem);
+            // console.log('offset retrieved', offset.top < (currentScroll() + windowHeight()/2));
+            return offset.top < (currentScroll() + (windowHeight()/2));
+        };
+
+        /*
+        * Returns the current scrolltop of the body element
+        */
+        var currentScroll = function() {
+            return b.scrollTop;
+        };
+
+        /*
+        * Expose the methods to the public service
+        */
+        return {
+            getOffset: getOffset,
+            scrollTo: scrollTo,
+            scrollCheck: scrollCheck,
+            currentScroll: currentScroll,
+            isVisible: isVisible,
+            windowWidth: windowWidth,
+            windowHeight: windowHeight
+        };
+    }]);
+
     app.factory('windowSize', ['$timeout', function($timeout){
     
         var ww = (function() {

@@ -298,7 +298,7 @@ nav {
   z-index: 20;
   right: 0;
   top: 0;
-  width: 10px;
+  width: 50px;
   height: 100%;
 }
 /* line 114, ../../../scss/partials/_global.scss */
@@ -315,70 +315,71 @@ nav li {
   left: 0px;
   width: 50px;
   height: 8.3333%;
+}
+/* line 128, ../../../scss/partials/_global.scss */
+nav li a {
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 10px;
+  height: 100%;
   -webkit-transition: all 0.1s ease-out;
   -moz-transition: all 0.1s ease-out;
   -o-transition: all 0.1s ease-out;
   transition: all 0.1s ease-out;
 }
-/* line 129, ../../../scss/partials/_global.scss */
-nav li.active {
-  left: -40px;
-}
-/* line 133, ../../../scss/partials/_global.scss */
-nav li.rapvice {
+/* line 138, ../../../scss/partials/_global.scss */
+nav li.rapvice a {
   background: #e6e6e6;
 }
-/* line 136, ../../../scss/partials/_global.scss */
-nav li.pharrell {
+/* line 141, ../../../scss/partials/_global.scss */
+nav li.pharrell a {
   background: #f1aa0b;
 }
-/* line 139, ../../../scss/partials/_global.scss */
-nav li.rick-ross {
+/* line 144, ../../../scss/partials/_global.scss */
+nav li.rick-ross a {
   background: #c52336;
 }
-/* line 142, ../../../scss/partials/_global.scss */
-nav li.jay-z {
+/* line 147, ../../../scss/partials/_global.scss */
+nav li.jay-z a {
   background: #0d0d0f;
 }
-/* line 145, ../../../scss/partials/_global.scss */
-nav li.yeezy {
+/* line 150, ../../../scss/partials/_global.scss */
+nav li.yeezy a {
   background: #46a48a;
 }
-/* line 148, ../../../scss/partials/_global.scss */
-nav li.biggie {
+/* line 153, ../../../scss/partials/_global.scss */
+nav li.biggie a {
   background: #2d9dba;
 }
-/* line 151, ../../../scss/partials/_global.scss */
-nav li.tupac {
+/* line 156, ../../../scss/partials/_global.scss */
+nav li.tupac a {
   background: #5e4e88;
 }
-/* line 154, ../../../scss/partials/_global.scss */
-nav li.drake {
+/* line 159, ../../../scss/partials/_global.scss */
+nav li.drake a {
   background: #e95215;
 }
-/* line 157, ../../../scss/partials/_global.scss */
-nav li.two-chainz {
+/* line 162, ../../../scss/partials/_global.scss */
+nav li.two-chainz a {
   background: #246f42;
 }
-/* line 160, ../../../scss/partials/_global.scss */
-nav li.eminem {
+/* line 165, ../../../scss/partials/_global.scss */
+nav li.eminem a {
   background: #2378b9;
 }
-/* line 163, ../../../scss/partials/_global.scss */
-nav li.lil-wayne {
+/* line 168, ../../../scss/partials/_global.scss */
+nav li.lil-wayne a {
   background: #13223b;
 }
-/* line 166, ../../../scss/partials/_global.scss */
-nav li.snoop {
+/* line 171, ../../../scss/partials/_global.scss */
+nav li.snoop a {
   background: #cab28a;
 }
-/* line 171, ../../../scss/partials/_global.scss */
-nav a {
-  display: block;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
+/* line 176, ../../../scss/partials/_global.scss */
+nav li.active a, nav li:hover a {
+  width: 50px;
 }
 
 @media screen and (max-width: 767px) {

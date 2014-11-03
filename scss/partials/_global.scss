@@ -108,7 +108,7 @@ nav {
     z-index: 20;
     right: 0;
     top: 0;
-    width: 10px;
+    width: 50px;
     height: 100%;
 
     ul {
@@ -124,55 +124,59 @@ nav {
         left: 0px;
         width: 50px;
         height: 8.3333%;
-        @include transition( all .1s ease-out );
 
-        &.active {
-            left: -40px;
+        a {
+            display: block;
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 10px;
+            height: 100%;
+            @include transition( all .1s ease-out );
         }
 
-        &.rapvice {
+        &.rapvice a {
             background: darken(#fff, 10%);
         }
-        &.pharrell {
+        &.pharrell a {
             background: darken(#f6bc39, 10%);
         }
-        &.rick-ross {
+        &.rick-ross a {
             background: darken(#dd3e51, 10%);
         }
-        &.jay-z {
+        &.jay-z a {
             background: darken(#24242b, 10%);
         }
-        &.yeezy {
+        &.yeezy a {
             background: darken(#61bca3, 10%);
         }
-        &.biggie {
+        &.biggie a {
             background: darken(#47b6d3, 10%);
         }
-        &.tupac {
+        &.tupac a {
             background: darken(#7663a6, 10%);
         }
-        &.drake {
+        &.drake a {
             background: darken(#ee7443, 10%);
         }
-        &.two-chainz {
+        &.two-chainz a {
             background: darken(#309659, 10%);
         }
-        &.eminem {
+        &.eminem a {
             background: darken(#3692d9, 10%);
         }
-        &.lil-wayne {
+        &.lil-wayne a {
             background: darken(#203861, 10%);
         }
-        &.snoop {
+        &.snoop a {
             background: darken(#dac9ad, 10%);
         }
-    }
 
-    a {
-        display: block;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
+        &.active, &:hover {
+            a {
+                width: 50px;
+            }
+        }
+        
     }
 }
