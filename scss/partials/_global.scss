@@ -1,0 +1,98 @@
+
+/* 	Global styles
+/* ======================================= */
+
+* {
+	@include box-sizing( border-box );
+}
+
+body, html {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	font-family: sans-serif;
+}
+
+.section, .inner {
+    display: block;
+    position: relative;
+    width: 100%;
+}
+
+.inner {
+    max-width: 1080px;
+}
+
+.rapper {
+    display: block;
+    position: fixed;
+    left: 0;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    @include transition( top .1s ease-out );
+
+    img.text, img.lad {
+        display: block;
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+    }
+
+    &.jay-z {
+        background: $bg-jay-z;
+        z-index: 13;
+    }
+
+    &.pharrell {
+        background: $bg-pharrell;
+        z-index: 11;
+    }
+
+    &.rick-ross {
+        background: $bg-rick-ross;
+        z-index: 10;
+    }
+
+    &.yeezy {
+        background: $bg-yeezy;
+        z-index: 8;
+    }
+
+    &.biggie {
+        background: $bg-biggie;
+        z-index: 7;
+    }
+
+    &.tupac {
+        background: $bg-tupac;
+        z-index: 6;
+    }
+
+    &.drake {
+        background: $bg-drake;
+        z-index: 5;
+    }
+
+    &.two-chainz {
+        background: $bg-two-chainz;
+        z-index: 4;
+    }
+
+    &.eminem {
+        background: $bg-eminem;
+        z-index: 3;
+    }
+
+    &.lil-wayne {
+        background: $bg-lil-wayne;
+        z-index: 2;
+    }
+
+    &.snoop {
+        background: $bg-snoop;
+        z-index: 1;
+    }
+}

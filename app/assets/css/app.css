@@ -1,0 +1,314 @@
+/* line 17, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+/* 	Flat UI Colours
+/* ======================================= */
+/* 	Base styles
+/* ======================================= */
+/* 	Fonts and that, 
+/* ======================================= */
+/* line 5, ../../../scss/partials/_typography.scss */
+h1 {
+  font-size: 32px;
+  line-height: 42px;
+  margin: 0 0 22px 0;
+}
+
+/* line 11, ../../../scss/partials/_typography.scss */
+h2 {
+  font-size: 24px;
+  line-height: 28px;
+  margin: 0 0 8px 0;
+}
+
+/* line 17, ../../../scss/partials/_typography.scss */
+h3 {
+  font-size: 20px;
+  line-height: 26px;
+  margin: 0 0 12px 0;
+}
+
+/* line 23, ../../../scss/partials/_typography.scss */
+.centered {
+  text-align: center;
+}
+
+/*  Form styling
+/* ======================================= */
+/* line 5, ../../../scss/partials/_forms.scss */
+input[type=text], input[type=email], input[type=phone], select, textarea {
+  border: 1px solid #bdc3c7;
+  outline: none;
+  padding: 8px 5px;
+  width: 100%;
+  font-size: 13px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+}
+/* line 13, ../../../scss/partials/_forms.scss */
+input[type=text].margin-bottom, input[type=email].margin-bottom, input[type=phone].margin-bottom, select.margin-bottom, textarea.margin-bottom {
+  margin-bottom: 20px;
+}
+
+/* line 18, ../../../scss/partials/_forms.scss */
+textarea {
+  height: 100px;
+}
+
+/* line 22, ../../../scss/partials/_forms.scss */
+input[type=checkbox] {
+  margin: 0 0 0 0;
+}
+
+/* line 26, ../../../scss/partials/_forms.scss */
+form .row {
+  display: block;
+  margin: 0 0 16px 0;
+}
+/* line 30, ../../../scss/partials/_forms.scss */
+form .row.full-width {
+  width: 100%;
+}
+/* line 34, ../../../scss/partials/_forms.scss */
+form .row.half-width {
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+  width: 47%;
+}
+/* line 38, ../../../scss/partials/_forms.scss */
+form .row.half-width.left {
+  margin-right: 6%;
+}
+/* line 43, ../../../scss/partials/_forms.scss */
+form .row label {
+  display: block;
+  font-size: 15px;
+  padding: 0 0 3px 0;
+}
+/* line 48, ../../../scss/partials/_forms.scss */
+form .row label.inline-block {
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+  vertical-align: top;
+}
+/* line 54, ../../../scss/partials/_forms.scss */
+form .row input {
+  display: block;
+}
+/* line 57, ../../../scss/partials/_forms.scss */
+form .row input.inline-block {
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+  vertical-align: top;
+}
+
+/* 	Global styles
+/* ======================================= */
+/* line 5, ../../../scss/partials/_global.scss */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 9, ../../../scss/partials/_global.scss */
+body, html {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  font-family: sans-serif;
+}
+
+/* line 16, ../../../scss/partials/_global.scss */
+.section, .inner {
+  display: block;
+  position: relative;
+  width: 100%;
+}
+
+/* line 22, ../../../scss/partials/_global.scss */
+.inner {
+  max-width: 1080px;
+}
+
+/* line 26, ../../../scss/partials/_global.scss */
+.rapper {
+  display: block;
+  position: fixed;
+  left: 0;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  -webkit-transition: top 0.1s ease-out;
+  -moz-transition: top 0.1s ease-out;
+  -o-transition: top 0.1s ease-out;
+  transition: top 0.1s ease-out;
+}
+/* line 36, ../../../scss/partials/_global.scss */
+.rapper img.text, .rapper img.lad {
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+/* line 44, ../../../scss/partials/_global.scss */
+.rapper.jay-z {
+  background: #24242b;
+  z-index: 13;
+}
+/* line 49, ../../../scss/partials/_global.scss */
+.rapper.pharrell {
+  background: #f6bc39;
+  z-index: 11;
+}
+/* line 54, ../../../scss/partials/_global.scss */
+.rapper.rick-ross {
+  background: #dd3e51;
+  z-index: 10;
+}
+/* line 59, ../../../scss/partials/_global.scss */
+.rapper.yeezy {
+  background: #61bca3;
+  z-index: 8;
+}
+/* line 64, ../../../scss/partials/_global.scss */
+.rapper.biggie {
+  background: #47b6d3;
+  z-index: 7;
+}
+/* line 69, ../../../scss/partials/_global.scss */
+.rapper.tupac {
+  background: #7663a6;
+  z-index: 6;
+}
+/* line 74, ../../../scss/partials/_global.scss */
+.rapper.drake {
+  background: #ee7443;
+  z-index: 5;
+}
+/* line 79, ../../../scss/partials/_global.scss */
+.rapper.two-chainz {
+  background: #309659;
+  z-index: 4;
+}
+/* line 84, ../../../scss/partials/_global.scss */
+.rapper.eminem {
+  background: #3692d9;
+  z-index: 3;
+}
+/* line 89, ../../../scss/partials/_global.scss */
+.rapper.lil-wayne {
+  background: #203861;
+  z-index: 2;
+}
+/* line 94, ../../../scss/partials/_global.scss */
+.rapper.snoop {
+  background: #dac9ad;
+  z-index: 1;
+}
+
+@media screen and (max-width: 767px) {
+  /* 	Mobile styles
+  /* ======================================= */
+}
+@media screen and (max-width: 959px) {
+  /* 	Tablet styles
+  /* ======================================= */
+}
+@media screen and (min-width: 960px) {
+  /* 	Desktop styles
+  /* ======================================= */
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3 / 2), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+  /* 	Hi-def styles
+  /* ======================================= */
+}
+/* ========================
+     _                                        
+ ___| |__   __ _ _ __ ___   ___   ___ ___ ___ 
+/ __| '_ \ / _` | '_ ` _ \ / _ \ / __/ __/ __|
+\__ \ | | | (_| | | | | | |  __/| (__\__ \__ \
+|___/_| |_|\__,_|_| |_| |_|\___(_)___|___/___/
+                                              
+/* ======================== */
+/* 	Shameful styles
+/* ======================================= */
