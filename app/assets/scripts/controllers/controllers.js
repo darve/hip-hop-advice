@@ -14,7 +14,8 @@
 
             // Cache our rapper elements
             var $rappers = $('.rapper'),
-                $rapperImg = $('.rapper img'),
+                $rapperImg = $('.rapper img.lad'),
+                $rapperText = $('.rapper img.text'),
                 $navLinks = $('nav li'),
                 num = $rappers.length,
                 height = $rappers.eq(0).outerHeight(),
@@ -22,18 +23,27 @@
                 percent = 0,
                 current,
                 top,
-                ratio = 100 / num;
-
+                ratio = 100 / num,
+                framecounter = 0;
+            
             $(d.body).css('height', height * num + 'px');
 
-            $rappers.each(function(i, val) {
-                // console.log(i, val);
-            });
+            function positionImages() {
+                $rapperImg.each(function(i, val) {
+                    var $this = $(this);
+                    $this.css('top', (height - $this[0].height) / 6);
+                });    
 
-            $rapperImg.each(function(i, val) {
-                var $this = $(this);
-                $this.css('top', (height - $this[0].height) / 6);
-            });
+                $rapperText.each(function(i, val) {
+                    var $this = $(this);
+                    $this.css('top', (height - $this[0].height) / 6);
+                });
+
+                $('.advice').each(function(i, val) {
+                    var $this = $(this);
+                    $this.css('top', (height*0.75) + 'px');
+                });
+            }
 
             animLoop.setFPS(60);
 
@@ -41,11 +51,10 @@
                 e.preventDefault();
 
                 var $this = $(this);
-                console.log($this.attr('data-index'));
                 // d.body.scrollTop = height * $this.attr('data-index');
 
                 var tween = new TWEEN.Tween( { y: d.body.scrollTop } )
-                .to( { y: height * $this.attr('data-index') }, 750 )
+                .to( { y: (height * $this.attr('data-index')) + 1 }, 750 )
                 .easing( TWEEN.Easing.Cubic.Out )
                 .onUpdate( function () {
                     d.body.scrollTop = this.y;
@@ -54,7 +63,13 @@
 
             });
 
+            positionImages();
+
             animLoop.add('scrollchecker', function() {
+                framecounter++;
+                if ( framecounter % 60 === 0 ) {
+                    positionImages();
+                }
                 TWEEN.update();
                 top = d.body.scrollTop;
                 percent = top/bodyheight * 100;

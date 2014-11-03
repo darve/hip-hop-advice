@@ -193,22 +193,49 @@ body, html {
   position: relative;
   width: 100%;
   height: 100%;
-  font-family: sans-serif;
+  font-family: 'proxima-nova', sans-serif;
+  background: #dac9ad;
 }
 
-/* line 16, ../../../scss/partials/_global.scss */
+/* line 17, ../../../scss/partials/_global.scss */
 .section, .inner {
   display: block;
   position: relative;
   width: 100%;
 }
 
-/* line 22, ../../../scss/partials/_global.scss */
+/* line 23, ../../../scss/partials/_global.scss */
 .inner {
   max-width: 1080px;
 }
 
-/* line 26, ../../../scss/partials/_global.scss */
+/* line 27, ../../../scss/partials/_global.scss */
+.credits {
+  display: block;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  padding: 26px;
+  color: white;
+  font-size: 14px;
+  z-index: 30;
+  text-transform: uppercase;
+}
+/* line 38, ../../../scss/partials/_global.scss */
+.credits a {
+  color: white;
+  text-decoration: none;
+  -webkit-transition: all 0.1s ease-out;
+  -moz-transition: all 0.1s ease-out;
+  -o-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
+}
+/* line 43, ../../../scss/partials/_global.scss */
+.credits a:hover, .credits a:focus {
+  color: #24242b;
+}
+
+/* line 49, ../../../scss/partials/_global.scss */
 .rapper {
   display: block;
   position: fixed;
@@ -222,76 +249,95 @@ body, html {
   -o-transition: top 0.1s ease-out;
   transition: top 0.1s ease-out;
 }
-/* line 36, ../../../scss/partials/_global.scss */
+/* line 59, ../../../scss/partials/_global.scss */
 .rapper img.text, .rapper img.lad {
   display: block;
   position: absolute;
   left: 0;
   right: 0;
   margin: 0 auto;
+  max-width: 80%;
+  -webkit-transition: top 0.1s ease-out;
+  -moz-transition: top 0.1s ease-out;
+  -o-transition: top 0.1s ease-out;
+  transition: top 0.1s ease-out;
 }
-/* line 44, ../../../scss/partials/_global.scss */
+/* line 69, ../../../scss/partials/_global.scss */
+.rapper .advice {
+  position: absolute;
+  display: block;
+  text-align: center;
+  font-size: 18px;
+  line-height: 24px;
+  text-transform: uppercase;
+  color: white;
+  width: 60%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+/* line 83, ../../../scss/partials/_global.scss */
 .rapper.rapvice {
   background: white;
   z-index: 14;
 }
-/* line 49, ../../../scss/partials/_global.scss */
+/* line 88, ../../../scss/partials/_global.scss */
 .rapper.jay-z {
   background: #24242b;
   z-index: 13;
 }
-/* line 54, ../../../scss/partials/_global.scss */
+/* line 93, ../../../scss/partials/_global.scss */
 .rapper.pharrell {
   background: #f6bc39;
   z-index: 11;
 }
-/* line 59, ../../../scss/partials/_global.scss */
+/* line 98, ../../../scss/partials/_global.scss */
 .rapper.rick-ross {
   background: #dd3e51;
   z-index: 10;
 }
-/* line 64, ../../../scss/partials/_global.scss */
+/* line 103, ../../../scss/partials/_global.scss */
 .rapper.yeezy {
   background: #61bca3;
   z-index: 8;
 }
-/* line 69, ../../../scss/partials/_global.scss */
+/* line 108, ../../../scss/partials/_global.scss */
 .rapper.biggie {
   background: #47b6d3;
   z-index: 7;
 }
-/* line 74, ../../../scss/partials/_global.scss */
+/* line 113, ../../../scss/partials/_global.scss */
 .rapper.tupac {
   background: #7663a6;
   z-index: 6;
 }
-/* line 79, ../../../scss/partials/_global.scss */
+/* line 118, ../../../scss/partials/_global.scss */
 .rapper.drake {
   background: #ee7443;
   z-index: 5;
 }
-/* line 84, ../../../scss/partials/_global.scss */
+/* line 123, ../../../scss/partials/_global.scss */
 .rapper.two-chainz {
   background: #309659;
   z-index: 4;
 }
-/* line 89, ../../../scss/partials/_global.scss */
+/* line 128, ../../../scss/partials/_global.scss */
 .rapper.eminem {
   background: #3692d9;
   z-index: 3;
 }
-/* line 94, ../../../scss/partials/_global.scss */
+/* line 133, ../../../scss/partials/_global.scss */
 .rapper.lil-wayne {
   background: #203861;
   z-index: 2;
 }
-/* line 99, ../../../scss/partials/_global.scss */
+/* line 138, ../../../scss/partials/_global.scss */
 .rapper.snoop {
   background: #dac9ad;
   z-index: 1;
 }
 
-/* line 105, ../../../scss/partials/_global.scss */
+/* line 144, ../../../scss/partials/_global.scss */
 nav {
   display: block;
   position: fixed;
@@ -301,14 +347,14 @@ nav {
   width: 50px;
   height: 100%;
 }
-/* line 114, ../../../scss/partials/_global.scss */
+/* line 153, ../../../scss/partials/_global.scss */
 nav ul {
   display: block;
   position: absolute;
   width: 100%;
   height: 100%;
 }
-/* line 121, ../../../scss/partials/_global.scss */
+/* line 160, ../../../scss/partials/_global.scss */
 nav li {
   display: block;
   position: relative;
@@ -316,7 +362,7 @@ nav li {
   width: 50px;
   height: 8.3333%;
 }
-/* line 128, ../../../scss/partials/_global.scss */
+/* line 167, ../../../scss/partials/_global.scss */
 nav li a {
   display: block;
   position: absolute;
@@ -329,55 +375,55 @@ nav li a {
   -o-transition: all 0.1s ease-out;
   transition: all 0.1s ease-out;
 }
-/* line 138, ../../../scss/partials/_global.scss */
+/* line 177, ../../../scss/partials/_global.scss */
 nav li.rapvice a {
   background: #e6e6e6;
 }
-/* line 141, ../../../scss/partials/_global.scss */
+/* line 180, ../../../scss/partials/_global.scss */
 nav li.pharrell a {
   background: #f1aa0b;
 }
-/* line 144, ../../../scss/partials/_global.scss */
+/* line 183, ../../../scss/partials/_global.scss */
 nav li.rick-ross a {
   background: #c52336;
 }
-/* line 147, ../../../scss/partials/_global.scss */
+/* line 186, ../../../scss/partials/_global.scss */
 nav li.jay-z a {
   background: #0d0d0f;
 }
-/* line 150, ../../../scss/partials/_global.scss */
+/* line 189, ../../../scss/partials/_global.scss */
 nav li.yeezy a {
   background: #46a48a;
 }
-/* line 153, ../../../scss/partials/_global.scss */
+/* line 192, ../../../scss/partials/_global.scss */
 nav li.biggie a {
   background: #2d9dba;
 }
-/* line 156, ../../../scss/partials/_global.scss */
+/* line 195, ../../../scss/partials/_global.scss */
 nav li.tupac a {
   background: #5e4e88;
 }
-/* line 159, ../../../scss/partials/_global.scss */
+/* line 198, ../../../scss/partials/_global.scss */
 nav li.drake a {
   background: #e95215;
 }
-/* line 162, ../../../scss/partials/_global.scss */
+/* line 201, ../../../scss/partials/_global.scss */
 nav li.two-chainz a {
   background: #246f42;
 }
-/* line 165, ../../../scss/partials/_global.scss */
+/* line 204, ../../../scss/partials/_global.scss */
 nav li.eminem a {
   background: #2378b9;
 }
-/* line 168, ../../../scss/partials/_global.scss */
+/* line 207, ../../../scss/partials/_global.scss */
 nav li.lil-wayne a {
   background: #13223b;
 }
-/* line 171, ../../../scss/partials/_global.scss */
+/* line 210, ../../../scss/partials/_global.scss */
 nav li.snoop a {
   background: #cab28a;
 }
-/* line 176, ../../../scss/partials/_global.scss */
+/* line 215, ../../../scss/partials/_global.scss */
 nav li.active a, nav li:hover a {
   width: 50px;
 }
