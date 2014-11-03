@@ -231,59 +231,154 @@ body, html {
   margin: 0 auto;
 }
 /* line 44, ../../../scss/partials/_global.scss */
+.rapper.rapvice {
+  background: white;
+  z-index: 14;
+}
+/* line 49, ../../../scss/partials/_global.scss */
 .rapper.jay-z {
   background: #24242b;
   z-index: 13;
 }
-/* line 49, ../../../scss/partials/_global.scss */
+/* line 54, ../../../scss/partials/_global.scss */
 .rapper.pharrell {
   background: #f6bc39;
   z-index: 11;
 }
-/* line 54, ../../../scss/partials/_global.scss */
+/* line 59, ../../../scss/partials/_global.scss */
 .rapper.rick-ross {
   background: #dd3e51;
   z-index: 10;
 }
-/* line 59, ../../../scss/partials/_global.scss */
+/* line 64, ../../../scss/partials/_global.scss */
 .rapper.yeezy {
   background: #61bca3;
   z-index: 8;
 }
-/* line 64, ../../../scss/partials/_global.scss */
+/* line 69, ../../../scss/partials/_global.scss */
 .rapper.biggie {
   background: #47b6d3;
   z-index: 7;
 }
-/* line 69, ../../../scss/partials/_global.scss */
+/* line 74, ../../../scss/partials/_global.scss */
 .rapper.tupac {
   background: #7663a6;
   z-index: 6;
 }
-/* line 74, ../../../scss/partials/_global.scss */
+/* line 79, ../../../scss/partials/_global.scss */
 .rapper.drake {
   background: #ee7443;
   z-index: 5;
 }
-/* line 79, ../../../scss/partials/_global.scss */
+/* line 84, ../../../scss/partials/_global.scss */
 .rapper.two-chainz {
   background: #309659;
   z-index: 4;
 }
-/* line 84, ../../../scss/partials/_global.scss */
+/* line 89, ../../../scss/partials/_global.scss */
 .rapper.eminem {
   background: #3692d9;
   z-index: 3;
 }
-/* line 89, ../../../scss/partials/_global.scss */
+/* line 94, ../../../scss/partials/_global.scss */
 .rapper.lil-wayne {
   background: #203861;
   z-index: 2;
 }
-/* line 94, ../../../scss/partials/_global.scss */
+/* line 99, ../../../scss/partials/_global.scss */
 .rapper.snoop {
   background: #dac9ad;
   z-index: 1;
+}
+
+/* line 105, ../../../scss/partials/_global.scss */
+nav {
+  display: block;
+  position: fixed;
+  z-index: 20;
+  right: 0;
+  top: 0;
+  width: 10px;
+  height: 100%;
+}
+/* line 114, ../../../scss/partials/_global.scss */
+nav ul {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+/* line 121, ../../../scss/partials/_global.scss */
+nav li {
+  display: block;
+  position: relative;
+  left: 0px;
+  width: 50px;
+  height: 8.3333%;
+  -webkit-transition: all 0.1s ease-out;
+  -moz-transition: all 0.1s ease-out;
+  -o-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
+}
+/* line 129, ../../../scss/partials/_global.scss */
+nav li.active {
+  left: -40px;
+}
+/* line 133, ../../../scss/partials/_global.scss */
+nav li.rapvice {
+  background: #e6e6e6;
+}
+/* line 136, ../../../scss/partials/_global.scss */
+nav li.pharrell {
+  background: #f1aa0b;
+}
+/* line 139, ../../../scss/partials/_global.scss */
+nav li.rick-ross {
+  background: #c52336;
+}
+/* line 142, ../../../scss/partials/_global.scss */
+nav li.jay-z {
+  background: #0d0d0f;
+}
+/* line 145, ../../../scss/partials/_global.scss */
+nav li.yeezy {
+  background: #46a48a;
+}
+/* line 148, ../../../scss/partials/_global.scss */
+nav li.biggie {
+  background: #2d9dba;
+}
+/* line 151, ../../../scss/partials/_global.scss */
+nav li.tupac {
+  background: #5e4e88;
+}
+/* line 154, ../../../scss/partials/_global.scss */
+nav li.drake {
+  background: #e95215;
+}
+/* line 157, ../../../scss/partials/_global.scss */
+nav li.two-chainz {
+  background: #246f42;
+}
+/* line 160, ../../../scss/partials/_global.scss */
+nav li.eminem {
+  background: #2378b9;
+}
+/* line 163, ../../../scss/partials/_global.scss */
+nav li.lil-wayne {
+  background: #13223b;
+}
+/* line 166, ../../../scss/partials/_global.scss */
+nav li.snoop {
+  background: #cab28a;
+}
+/* line 171, ../../../scss/partials/_global.scss */
+nav a {
+  display: block;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
 }
 
 @media screen and (max-width: 767px) {

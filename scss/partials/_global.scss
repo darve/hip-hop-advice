@@ -41,6 +41,11 @@ body, html {
         margin: 0 auto;
     }
 
+    &.rapvice {
+        background: $bg-rapvice;
+        z-index: 14;
+    }
+
     &.jay-z {
         background: $bg-jay-z;
         z-index: 13;
@@ -94,5 +99,80 @@ body, html {
     &.snoop {
         background: $bg-snoop;
         z-index: 1;
+    }
+}
+
+nav {
+    display: block;
+    position: fixed;
+    z-index: 20;
+    right: 0;
+    top: 0;
+    width: 10px;
+    height: 100%;
+
+    ul {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+
+    li {
+        display: block;
+        position: relative;
+        left: 0px;
+        width: 50px;
+        height: 8.3333%;
+        @include transition( all .1s ease-out );
+
+        &.active {
+            left: -40px;
+        }
+
+        &.rapvice {
+            background: darken(#fff, 10%);
+        }
+        &.pharrell {
+            background: darken(#f6bc39, 10%);
+        }
+        &.rick-ross {
+            background: darken(#dd3e51, 10%);
+        }
+        &.jay-z {
+            background: darken(#24242b, 10%);
+        }
+        &.yeezy {
+            background: darken(#61bca3, 10%);
+        }
+        &.biggie {
+            background: darken(#47b6d3, 10%);
+        }
+        &.tupac {
+            background: darken(#7663a6, 10%);
+        }
+        &.drake {
+            background: darken(#ee7443, 10%);
+        }
+        &.two-chainz {
+            background: darken(#309659, 10%);
+        }
+        &.eminem {
+            background: darken(#3692d9, 10%);
+        }
+        &.lil-wayne {
+            background: darken(#203861, 10%);
+        }
+        &.snoop {
+            background: darken(#dac9ad, 10%);
+        }
+    }
+
+    a {
+        display: block;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
     }
 }

@@ -4,6 +4,10 @@ angular.module('BriocheApp').run(['$templateCache', function($templateCache) {
   $templateCache.put('app/views/home.html',
     "<!-- RAPPERS, YO -->\n" +
     "\n" +
+    "<div class=\"rapper rapvice\">\n" +
+    "    <img src=\"/assets/img/text/rapvice.png\" class=\"text\" />\n" +
+    "</div>\n" +
+    "\n" +
     "<div class=\"rapper jay-z\">\n" +
     "    <img src=\"/assets/img/text/jay-z.png\" class=\"text\" />\n" +
     "    <img src=\"/assets/img/jay-z.png\" class=\"lad\" />\n" +

@@ -15,8 +15,14 @@
             // Cache our rapper elements
             var $rappers = $('.rapper'),
                 $rapperImg = $('.rapper img'),
+                $navLinks = $('nav li'),
                 num = $rappers.length,
-                height = $rappers.eq(0).outerHeight();
+                height = $rappers.eq(0).outerHeight(),
+                bodyheight = height * num,
+                percent = 0,
+                current,
+                top,
+                ratio = 100 / num;
 
             $(d.body).css('height', height * num + 'px');
 
@@ -29,12 +35,28 @@
                 $this.css('top', (height - $this[0].height) / 6);
             });
 
-            animLoop.setFPS(20);
+            animLoop.setFPS(60);
+
+            $navLinks.on('click', function(e) {
+                
+            });
 
             animLoop.add('scrollchecker', function() {
-                var top = d.body.scrollTop;
-                // console.log(top/height * 100);
-                $rappers[0].style.height = Math.abs((top/height * 100)-100) + '%';
+                top = d.body.scrollTop;
+                percent = top/bodyheight * 100;
+                current = Math.floor(percent / ratio);
+                $navLinks.removeClass('active').eq(current).addClass('active');
+                for ( var i = 0; i < num; i++ ) {
+
+                    if ( i < current ) {
+                        $rappers[i].style.height = '0%';
+                    } else if ( i > current ) {
+                        $rappers[i].style.height = '100%';
+                    }
+                }
+
+                var newtop = top - current*height;
+                $rappers[current].style.height = Math.abs((newtop/height * 100)-100) + '%';
             });
 
             animLoop.start();
