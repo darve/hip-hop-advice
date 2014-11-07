@@ -95,90 +95,6 @@ h3 {
   text-align: center;
 }
 
-/*  Form styling
-/* ======================================= */
-/* line 5, ../../../scss/partials/_forms.scss */
-input[type=text], input[type=email], input[type=phone], select, textarea {
-  border: 1px solid #bdc3c7;
-  outline: none;
-  padding: 8px 5px;
-  width: 100%;
-  font-size: 13px;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  -ms-border-radius: 4px;
-  -o-border-radius: 4px;
-  border-radius: 4px;
-}
-/* line 13, ../../../scss/partials/_forms.scss */
-input[type=text].margin-bottom, input[type=email].margin-bottom, input[type=phone].margin-bottom, select.margin-bottom, textarea.margin-bottom {
-  margin-bottom: 20px;
-}
-
-/* line 18, ../../../scss/partials/_forms.scss */
-textarea {
-  height: 100px;
-}
-
-/* line 22, ../../../scss/partials/_forms.scss */
-input[type=checkbox] {
-  margin: 0 0 0 0;
-}
-
-/* line 26, ../../../scss/partials/_forms.scss */
-form .row {
-  display: block;
-  margin: 0 0 16px 0;
-}
-/* line 30, ../../../scss/partials/_forms.scss */
-form .row.full-width {
-  width: 100%;
-}
-/* line 34, ../../../scss/partials/_forms.scss */
-form .row.half-width {
-  display: -moz-inline-stack;
-  display: inline-block;
-  vertical-align: middle;
-  *vertical-align: auto;
-  zoom: 1;
-  *display: inline;
-  width: 47%;
-}
-/* line 38, ../../../scss/partials/_forms.scss */
-form .row.half-width.left {
-  margin-right: 6%;
-}
-/* line 43, ../../../scss/partials/_forms.scss */
-form .row label {
-  display: block;
-  font-size: 15px;
-  padding: 0 0 3px 0;
-}
-/* line 48, ../../../scss/partials/_forms.scss */
-form .row label.inline-block {
-  display: -moz-inline-stack;
-  display: inline-block;
-  vertical-align: middle;
-  *vertical-align: auto;
-  zoom: 1;
-  *display: inline;
-  vertical-align: top;
-}
-/* line 54, ../../../scss/partials/_forms.scss */
-form .row input {
-  display: block;
-}
-/* line 57, ../../../scss/partials/_forms.scss */
-form .row input.inline-block {
-  display: -moz-inline-stack;
-  display: inline-block;
-  vertical-align: middle;
-  *vertical-align: auto;
-  zoom: 1;
-  *display: inline;
-  vertical-align: top;
-}
-
 /* 	Global styles
 /* ======================================= */
 /* line 5, ../../../scss/partials/_global.scss */
@@ -277,7 +193,7 @@ body, html {
   margin: 0 auto;
 }
 /* line 83, ../../../scss/partials/_global.scss */
-.rapper.rapvice {
+.rapper.hip-hop-advice {
   background: white;
   z-index: 14;
 }

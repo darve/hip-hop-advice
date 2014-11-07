@@ -31,7 +31,7 @@
             function positionImages() {
                 $rapperImg.each(function(i, val) {
                     var $this = $(this);
-                    $this.css('top', (height - $this[0].height) / 6);
+                    $this.css('top', (height - $this[0].height) / 2);
                 });    
 
                 $rapperText.each(function(i, val) {
@@ -67,14 +67,17 @@
 
             animLoop.add('scrollchecker', function() {
                 framecounter++;
+                
                 if ( framecounter % 60 === 0 ) {
                     positionImages();
                 }
+
                 TWEEN.update();
                 top = d.body.scrollTop;
                 percent = top/bodyheight * 100;
                 current = Math.floor(percent / ratio);
                 $navLinks.removeClass('active').eq(current).addClass('active');
+
                 for ( var i = 0; i < num; i++ ) {
 
                     if ( i < current ) {
@@ -89,6 +92,10 @@
             });
 
             animLoop.start();
+
+            $(w).on('scroll', function(e) {
+                console.log(e);
+            });
 
         });
 
