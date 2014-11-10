@@ -50,6 +50,18 @@
 
     $(d.body).css('height', height * num + 'px');
 
+    $navLinks.on('click', function(e) {
+        e.preventDefault();
+
+        var tween = new TWEEN.Tween( { y: d.body.scrollTop } )
+        .to( { y: (height * $(this).attr('data-index')) + 1 }, 750 )
+        .easing( TWEEN.Easing.Cubic.Out )
+        .onUpdate( function () {
+            d.body.scrollTop = this.y;
+        })
+        .start();
+    });
+
     function positionImages() {
         $rapperImg.each(function(i, val) {
             var $this = $(this);
@@ -65,18 +77,6 @@
             $(this).css('top', (height*0.75) + 'px');
         });
     }
-
-    $navLinks.on('click', function(e) {
-        e.preventDefault();
-
-        var tween = new TWEEN.Tween( { y: d.body.scrollTop } )
-        .to( { y: (height * $(this).attr('data-index')) + 1 }, 750 )
-        .easing( TWEEN.Easing.Cubic.Out )
-        .onUpdate( function () {
-            d.body.scrollTop = this.y;
-        })
-        .start();
-    });
 
     function render() {
         window.requestAnimationFrame(render);
@@ -113,6 +113,7 @@
     window.g = init;
 
 })(window, document, jQuery);
+
 
 /**
  * DOM is ready, yo.
