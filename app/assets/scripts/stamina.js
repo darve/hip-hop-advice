@@ -50,12 +50,12 @@
 
     function render(){
         requestAnimationFrame(render);
-        // framecounter++;
-        // if ( framecounter % 2 === 0 ) {
+        framecounter++;
+        if ( framecounter % 2 === 0 ) {
             for ( var i = 0, l = instances.length; i < l; i++ ) {
                 instances[i].next();
             }
-        // }
+        }
     }
 
     $(init);

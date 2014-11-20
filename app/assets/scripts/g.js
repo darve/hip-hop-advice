@@ -46,7 +46,9 @@
         current,
         top,
         ratio = 100 / num,
-        framecounter = 0;
+        framecounter = 0,
+        elements = d.querySelectorAll('[data-sequence-name]'),
+        instances = [];
 
     $(d.body).css('height', height * num + 'px');
 
@@ -99,6 +101,10 @@
             }
         }
 
+        for ( var i = 0, l = instances.length; i < l; i++ ) {
+            instances[i].next();
+        }
+
         $navLinks.removeClass('active').eq(current).addClass('active');
         $rappers[current].style.height = Math.abs(((top - current*height)/height * 100)-100) + '%';
 
@@ -109,10 +115,59 @@
 
     function init() {
         positionImages();
+        for ( var i = 0, l = elements.length; i < l; i++ ){
+            instances.push(new Sequence(elements[i]));
+        }
         window.requestAnimationFrame(render);
     }
 
     window.g = init;
+
+    var Sequence = function(el) {
+        
+        var el = el,
+        
+            name = el.getAttribute('data-sequence-name'),
+            numframes = parseInt(el.getAttribute('data-sequence-frames'), 10),
+
+            current = 0,
+            loaded = 0,
+            preload = [],
+            frames = [],
+            rev = [],
+            ready = false;
+
+        function onload() {
+            loaded++;
+            if ( loaded === numframes ) {
+                ready = true;
+            }
+        }
+
+        function push(arr, num) {
+            arr.push('/assets/img/sequences/' + name + '/' + (num) + '.png');
+        }
+
+        for ( var i = 0, l = numframes; i < l; i++ ) {
+            push(frames, i+1);
+            preload.push(new Image());
+            preload[i].onload = onload;
+            preload[i].src = frames[i];
+        }
+
+        for ( var i = numframes-1; i > 0; i-- ) {
+            push(frames, i);
+        }
+
+        this.next = function() {
+            if ( ready ) {
+                current = (current < (frames.length-1) ? current+1 : 0);
+                el.src = frames[current];
+                console.log(el.src);
+            }
+        }
+
+    }
 
 })(window, document, jQuery);
 
