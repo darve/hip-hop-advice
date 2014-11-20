@@ -148,7 +148,7 @@ body, html {
 }
 /* line 43, ../../../scss/partials/_global.scss */
 .credits a:hover, .credits a:focus {
-  color: #24242b;
+  color: #1a1a1f;
 }
 
 /* line 49, ../../../scss/partials/_global.scss */
@@ -199,7 +199,7 @@ body, html {
 }
 /* line 88, ../../../scss/partials/_global.scss */
 .rapper.jay-z {
-  background: #24242b;
+  background: #1a1a1f;
   z-index: 13;
 }
 /* line 93, ../../../scss/partials/_global.scss */

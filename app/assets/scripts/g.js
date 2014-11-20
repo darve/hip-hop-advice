@@ -102,6 +102,8 @@
         $navLinks.removeClass('active').eq(current).addClass('active');
         $rappers[current].style.height = Math.abs(((top - current*height)/height * 100)-100) + '%';
 
+        // console.log(current);
+        window.visibleSequences = [current];
         TWEEN.update();
     }
 

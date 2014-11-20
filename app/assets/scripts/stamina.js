@@ -35,6 +35,8 @@
         instances = [],
         framecounter = 0;
 
+    window.sequences = instances;
+
     /**
      * Iterate through all of the DOM elements with the data-sequence-name attribute
      * and create a new Sequence instance
@@ -48,9 +50,12 @@
 
     function render(){
         requestAnimationFrame(render);
-        for ( var i = 0, l = instances.length; i < l; i++ ) {
-            instances[i].next();
-        }
+        // framecounter++;
+        // if ( framecounter % 2 === 0 ) {
+            for ( var i = 0, l = instances.length; i < l; i++ ) {
+                instances[i].next();
+            }
+        // }
     }
 
     $(init);
@@ -59,14 +64,15 @@
         
         var el = el,
         
-        name = el.getAttribute('data-sequence-name'),
-        numframes = parseInt(el.getAttribute('data-sequence-frames'), 10),
+            name = el.getAttribute('data-sequence-name'),
+            numframes = parseInt(el.getAttribute('data-sequence-frames'), 10),
 
-        current = 0,
-        loaded = 0,
-        preload = [],
-        frames = [],
-        ready = false;
+            current = 0,
+            loaded = 0,
+            preload = [],
+            frames = [],
+            rev = [],
+            ready = false;
 
         function onload() {
             loaded++;
@@ -75,19 +81,24 @@
             }
         }
 
+        function push(arr, num) {
+            arr.push('/assets/img/sequences/' + name + '/' + (num) + '.png');
+        }
+
         for ( var i = 0, l = numframes; i < l; i++ ) {
-            frames[i] = '/assets/img/sequences/' + name + '/' + (i+1) + '.png';
+            push(frames, i+1);
             preload.push(new Image());
             preload[i].onload = onload;
             preload[i].src = frames[i];
         }
 
-        console.log(frames);
+        for ( var i = numframes-1; i > 0; i-- ) {
+            push(frames, i);
+        }
 
         this.next = function() {
             if ( ready ) {
-                current = (current < (numframes-1) ? current+1 : 0);
-                console.log(current);
+                current = (current < (frames.length-1) ? current+1 : 0);
                 el.src = frames[current];
             }
         }
@@ -95,31 +106,3 @@
     }
 
 })(window, document, jQuery);
-
-
-    // $('img.lad').each(function(i, val){
-        
-    //     var name = this.getAttribute('data-sequence-name'),
-    //         frames = parseInt(this.getAttribute('data-sequence-frames'), 10);
-
-    //     if ( name ) {
-
-    //         var images = [],
-    //             loaded = 0;
-
-    //         var onload = function () {
-    //             loaded++;
-    //             if (loaded === frames) {
-
-    //             }
-    //         }
-
-    //         for ( var i = 0, l = frames; i < l; i++ ) {
-    //             images.push(new Image());
-
-
-    //         }
-
-    //     }
-        
-    // });
