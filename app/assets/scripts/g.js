@@ -33,22 +33,27 @@
  */
 (function(w, d, $) {
         
-    // Cache our rapper elements
-    var $rappers = $('.rapper'),
+    
+    var 
+        // Cache our rapper elements
+        $rappers = $('.rapper'),
         $rapperImg = $('.rapper img.lad'),
         $rapperText = $('.rapper img.text'),
         $advice = $('.advice'),
         $navLinks = $('nav li'),
+        elements = d.querySelectorAll('[data-sequence-name]'),
+
+        // Process variables
         num = $rappers.length,
         height = $rappers.eq(0).outerHeight(),
         bodyheight = height * num,
         percent = 0,
-        current,
-        top,
         ratio = 100 / num,
         framecounter = 0,
-        elements = d.querySelectorAll('[data-sequence-name]'),
-        instances = [];
+
+        instances = [],
+        current,
+        top;
 
     $(d.body).css('height', height * num + 'px');
 
@@ -65,6 +70,9 @@
     });
 
     function positionImages() {
+
+        $rapperImg = $('.rapper img.lad');
+
         $rapperImg.each(function(i, val) {
             var $this = $(this);
             $this.css('top', (height - $this[0].height) / 2);
@@ -128,12 +136,14 @@
         var el = el,
         
             name = el.getAttribute('data-sequence-name'),
+            parent = el.parentNode,
             numframes = parseInt(el.getAttribute('data-sequence-frames'), 10),
 
             current = 0,
             loaded = 0,
             preload = [],
             frames = [],
+            img = [],
             rev = [],
             ready = false;
 
@@ -158,15 +168,28 @@
         for ( var i = numframes-1; i > 0; i-- ) {
             push(frames, i);
         }
+        
+        img.push(el);
+
+        for ( var i in frames ) {
+            img.push( new Image() );
+            img[i].src = frames[i];
+            img[i].className = "lad";
+            parent.appendChild(img[i]);
+        }
+
+        // console.log(frames);
+
+        // el.insertAdjacentHTML('afterend', htmlString);
 
         this.next = function() {
             if ( ready ) {
+                img[current].className = "lad";
                 current = (current < (frames.length-1) ? current+1 : 0);
-                el.src = frames[current];
-                console.log(el.src);
+                // el.src = frames[current];
+                img[current].className = "lad on";
             }
         }
-
     }
 
 })(window, document, jQuery);

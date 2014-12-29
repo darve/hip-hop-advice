@@ -63,7 +63,7 @@ body, html {
         right: 0;
         margin: 0 auto;
         max-width: 80%;
-        @include transition( top .1s ease-out );
+        // @include transition( top .1s ease-out );
     }
 
     .advice {
@@ -138,6 +138,16 @@ body, html {
     &.snoop {
         background: $bg-snoop;
         z-index: 1;
+    }
+}
+
+.rapper img.lad {
+    -webkit-transform: translate3d(-1000px, -1000px, -1000px);
+    // transform: translate3d(-1000, -1000, -1000);
+    
+    &.on {
+        -webkit-transform: translate3d(0, 0, 0);
+        // transform: translat3d(0, 0, 0);
     }
 }
 
