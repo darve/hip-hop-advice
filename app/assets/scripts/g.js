@@ -132,7 +132,7 @@
         $navLinks.removeClass('active').eq(current).addClass('active');
         $rappers[current].style.height = Math.abs(((top - current*height)/height * 100)-100) + '%';
 
-        $current.text(current);
+        // $current.text(current);
 
         window.visibleSequences = [current];
         TWEEN.update();
