@@ -41,6 +41,7 @@
         $rapperText = $('.rapper img.text'),
         $advice = $('.advice'),
         $navLinks = $('nav li'),
+        $current = $('#current'),
         elements = d.querySelectorAll('[data-sequence-name]'),
 
         // Process variables
@@ -53,7 +54,8 @@
 
         instances = [],
         current,
-        top;
+        top,
+        debounce;
 
     $(d.body).css('height', height * num + 'px');
 
@@ -69,32 +71,32 @@
         .start();
     });
 
-    function positionImages() {
+    $(window).on('resize', function(e){
+        window.clearTimeout(debounce);
+        debounce = window.setTimeout(positionImages, 100);
+    });
 
-        $rapperImg = $('.rapper img.lad');
+    function positionImages(id) {
+        setTimeout(function() {
+            if ( typeof id === 'undefined' ) {
+                $rapperImg.each(function(i, val) {
+                    var $this = $(this);
+                    $this.css('top', (height - $this[0].height) / 2);
+                });    
 
-        $rapperImg.each(function(i, val) {
-            var $this = $(this);
-            $this.css('top', (height - $this[0].height) / 2);
-        });    
-
-        $rapperText.each(function(i, val) {
-            var $this = $(this);
-            $this.css('top', (height - $this[0].height) / 6);
-        });
-
-        $advice.each(function(i, val) {
-            $(this).css('top', (height*0.75) + 'px');
-        });
+                $advice.each(function(i, val) {
+                    $(this).css('top', (height*0.75) + 'px');
+                });    
+            } else {
+                var $img = $rapperImg.eq(id);
+                $img.css('top', (height - $img[0].height) / 2);
+            }
+        }, 500);
     }
 
     function render() {
         window.requestAnimationFrame(render);
         framecounter++;
-        
-        if ( framecounter % 60 === 0 ) {
-            positionImages();
-        }
 
         top = d.body.scrollTop;
         percent = top/bodyheight * 100;
@@ -109,32 +111,47 @@
             }
         }
 
-        for ( var i = 0, l = instances.length; i < l; i++ ) {
-            instances[i].next();
+        if ( framecounter % 60 === 0 ) {
+            positionImages();
         }
+
+        if ( current === 0 ) {
+            instances[0].next();
+            instances[1].next();
+            instances[2].next();
+        } else {
+            instances[current-1].next();
+            instances[current].next();
+            instances[current+1].next();
+        }
+
+        // for ( var i = start, l = current; i < l; i++ ) {
+        //     instances[i].next();
+        // }
 
         $navLinks.removeClass('active').eq(current).addClass('active');
         $rappers[current].style.height = Math.abs(((top - current*height)/height * 100)-100) + '%';
 
-        // console.log(current);
+        $current.text(current);
+
         window.visibleSequences = [current];
         TWEEN.update();
     }
 
     function init() {
-        positionImages();
         for ( var i = 0, l = elements.length; i < l; i++ ){
-            instances.push(new Sequence(elements[i]));
+            instances.push(new Sequence(elements[i],i));
         }
         window.requestAnimationFrame(render);
     }
 
     window.g = init;
 
-    var Sequence = function(el) {
+    var Sequence = function(el, id) {
         
         var el = el,
-        
+            id = id,
+
             name = el.getAttribute('data-sequence-name'),
             parent = el.parentNode,
             numframes = parseInt(el.getAttribute('data-sequence-frames'), 10),
@@ -151,6 +168,7 @@
             loaded++;
             if ( loaded === numframes ) {
                 ready = true;
+                positionImages(id);
             }
         }
 
@@ -171,12 +189,12 @@
         
         img.push(el);
 
-        for ( var i in frames ) {
-            img.push( new Image() );
-            img[i].src = frames[i];
-            img[i].className = "lad";
-            parent.appendChild(img[i]);
-        }
+        // for ( var i in frames ) {
+        //     img.push( new Image() );
+        //     img[i].src = frames[i];
+        //     img[i].className = "lad";
+        //     parent.appendChild(img[i]);
+        // }
 
         // console.log(frames);
 
@@ -184,10 +202,8 @@
 
         this.next = function() {
             if ( ready ) {
-                img[current].className = "lad";
                 current = (current < (frames.length-1) ? current+1 : 0);
-                // el.src = frames[current];
-                img[current].className = "lad on";
+                el.src = frames[current];
             }
         }
     }

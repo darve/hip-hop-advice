@@ -63,8 +63,17 @@ body, html {
         right: 0;
         margin: 0 auto;
         max-width: 80%;
-        // @include transition( top .1s ease-out );
+        @include transition( top .5s ease-out );
+        @include transform( translate3d( 0, 0, 0) );
     }
+
+    // img.lad {
+    //     @include opacity(0);
+
+    //     &.loaded {
+    //         @include opacity(1);
+    //     }
+    // }
 
     .advice {
         position: absolute;
@@ -81,73 +90,63 @@ body, html {
     }
 
     &.hip-hop-advice {
-        background: $bg-hip-hop-advice;
+        background: $bg-hip-hop-advice image-url('text/hip-hop-advice.png') center 150px fixed no-repeat;
         z-index: 14;
     }
 
     &.jay-z {
-        background: $bg-jay-z;
+        background: $bg-jay-z image-url('text/jay-z.png') center 150px fixed no-repeat;;
         z-index: 13;
     }
 
     &.pharrell {
-        background: $bg-pharrell;
+        background: $bg-pharrell image-url('text/pharrell.png') center 150px fixed no-repeat;
         z-index: 11;
     }
 
     &.rick-ross {
-        background: $bg-rick-ross;
+        background: $bg-rick-ross image-url('text/rick-ross.png') center 150px fixed no-repeat;
         z-index: 10;
     }
 
     &.yeezy {
-        background: $bg-yeezy;
+        background: $bg-yeezy image-url('text/yeezy.png') center 150px fixed no-repeat;
         z-index: 8;
     }
 
     &.biggie {
-        background: $bg-biggie;
+        background: $bg-biggie image-url('text/biggie.png') center 150px fixed no-repeat;
         z-index: 7;
     }
 
     &.tupac {
-        background: $bg-tupac;
+        background: $bg-tupac image-url('text/tupac.png') center 150px fixed no-repeat;
         z-index: 6;
     }
 
     &.drake {
-        background: $bg-drake;
+        background: $bg-drake image-url('text/drake.png') center 150px fixed no-repeat;
         z-index: 5;
     }
 
     &.two-chainz {
-        background: $bg-two-chainz;
+        background: $bg-two-chainz image-url('text/two-chainz.png') center 150px fixed no-repeat;
         z-index: 4;
     }
 
     &.eminem {
-        background: $bg-eminem;
+        background: $bg-eminem image-url('text/eminem.png') center 150px fixed no-repeat;
         z-index: 3;
     }
 
     &.lil-wayne {
-        background: $bg-lil-wayne;
+        background: $bg-lil-wayne image-url('text/lil-wayne.png') center 150px fixed no-repeat;
         z-index: 2;
     }
 
     &.snoop {
-        background: $bg-snoop;
+        background: $bg-snoop image-url('text/snoop.png') center 150px fixed no-repeat;
         z-index: 1;
-    }
-}
-
-.rapper img.lad {
-    -webkit-transform: translate3d(-1000px, -1000px, -1000px);
-    // transform: translate3d(-1000, -1000, -1000);
-    
-    &.on {
-        -webkit-transform: translate3d(0, 0, 0);
-        // transform: translat3d(0, 0, 0);
     }
 }
 
@@ -228,4 +227,17 @@ nav {
         }
         
     }
+}
+
+#current {
+    display: block;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 10000;
+    font-size: 22px;
+    color: white;
+    background: black;
+    width: 32px;
+    height: 32px;
 }
