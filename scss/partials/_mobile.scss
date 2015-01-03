@@ -1,3 +1,78 @@
 
 /* 	Mobile styles
 /* ======================================= */
+
+.rapper {
+
+    &.hip-hop-advice {
+        background: $bg-hip-hop-advice image-url('text/hip-hop-advice.png') center 180px fixed no-repeat;
+        background-size: 300px auto;
+        z-index: 14;
+    }
+
+    &.jay-z {
+        background: $bg-jay-z image-url('text/jay-z.png') center 180px fixed no-repeat;
+        background-size: 300px auto;
+        z-index: 13;
+    }
+
+    &.pharrell {
+        background: $bg-pharrell image-url('text/pharrell.png') center 180px fixed no-repeat;
+        background-size: 300px auto;
+        z-index: 11;
+    }
+
+    &.rick-ross {
+        background: $bg-rick-ross image-url('text/rick-ross.png') center 180px fixed no-repeat;
+        background-size: 300px auto;
+        z-index: 10;
+    }
+
+    &.yeezy {
+        background: $bg-yeezy image-url('text/yeezy.png') center 180px fixed no-repeat;
+        background-size: 300px auto;
+        z-index: 8;
+    }
+
+    &.biggie {
+        background: $bg-biggie image-url('text/biggie.png') center 180px fixed no-repeat;
+        background-size: 300px auto;
+        z-index: 7;
+    }
+
+    &.tupac {
+        background: $bg-tupac image-url('text/tupac.png') center 180px fixed no-repeat;
+        background-size: 300px auto;
+        z-index: 6;
+    }
+
+    &.drake {
+        background: $bg-drake image-url('text/drake.png') center 180px fixed no-repeat;
+        background-size: 300px auto;
+        z-index: 5;
+    }
+
+    &.two-chainz {
+        background: $bg-two-chainz image-url('text/two-chainz.png') center 180px fixed no-repeat;
+        background-size: 300px auto;
+        z-index: 4;
+    }
+
+    &.eminem {
+        background: $bg-eminem image-url('text/eminem.png') center 180px fixed no-repeat;
+        background-size: 300px auto;
+        z-index: 3;
+    }
+
+    &.lil-wayne {
+        background: $bg-lil-wayne image-url('text/lil-wayne.png') center 180px fixed no-repeat;
+        background-size: 300px auto;
+        z-index: 2;
+    }
+
+    &.snoop {
+        background: $bg-snoop image-url('text/snoop.png') center 180px fixed no-repeat;
+        background-size: 300px auto;
+        z-index: 1;
+    }
+}

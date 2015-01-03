@@ -1,6 +1,6 @@
 
 /**
- * RFA, Fo Sho
+ * RFA, Fo Sho'
  */
 
 (function() {
@@ -32,7 +32,6 @@
  * HERE WE GO.
  */
 (function(w, d, $) {
-        
     
     var 
         // Cache our rapper elements
@@ -46,12 +45,11 @@
 
         // Process variables
         num = $rappers.length,
-        height = $rappers.eq(0).outerHeight(),
+        height = $(window).innerHeight(),
         bodyheight = height * num,
         percent = 0,
         ratio = 100 / num,
         framecounter = 0,
-
         instances = [],
         current,
         top,
@@ -73,37 +71,28 @@
 
     $(window).on('resize', function(e){
         window.clearTimeout(debounce);
+        height = $(window).innerHeight();
         debounce = window.setTimeout(positionImages, 100);
     });
 
-    function positionImages(id) {
-        setTimeout(function() {
-            if ( typeof id === 'undefined' ) {
-                $rapperImg.each(function(i, val) {
-                    var $this = $(this);
-                    $this.css('top', (height - $this[0].height) / 2);
-                });    
-
-                $advice.each(function(i, val) {
-                    $(this).css('top', (height*0.75) + 'px');
-                });    
-            } else {
-                var $img = $rapperImg.eq(id);
-                $img.css('top', (height - $img[0].height) / 2);
-            }
-        }, 500);
+    function positionImages(h) {
+        $rapperImg.each(function(i, val) {
+            $(this).css('top', (height - h) / 2);
+        });    
+        // $advice.each(function(i, val) {
+        //     $(this).css('top', (height*0.75) + 'px');
+        // });    
     }
 
     function render() {
         window.requestAnimationFrame(render);
-        framecounter++;
 
+        framecounter++;
         top = d.body.scrollTop;
         percent = top/bodyheight * 100;
         current = Math.floor(percent / ratio);
 
         for ( var i = 0; i < num; i++ ) {
-
             if ( i < current ) {
                 $rappers[i].style.height = '0%';
             } else if ( i > current ) {
@@ -111,30 +100,23 @@
             }
         }
 
-        if ( framecounter % 60 === 0 ) {
-            positionImages();
-        }
+        try {
+            if ( current === 0 ) {
+                instances[0].next();
+                instances[1].next();
+                instances[2].next();
+            } else {
+                instances[current-1].next();
+                instances[current].next();
+                instances[current+1].next();
+            }
 
-        if ( current === 0 ) {
-            instances[0].next();
-            instances[1].next();
-            instances[2].next();
-        } else {
-            instances[current-1].next();
-            instances[current].next();
-            instances[current+1].next();
-        }
+            $navLinks.removeClass('active').eq(current).addClass('active');
+            $rappers[current].style.height = Math.abs(((top - current*height)/height * 100)-100) + '%';
 
-        // for ( var i = start, l = current; i < l; i++ ) {
-        //     instances[i].next();
-        // }
+            window.visibleSequences = [current];
+        } catch (e) {}
 
-        $navLinks.removeClass('active').eq(current).addClass('active');
-        $rappers[current].style.height = Math.abs(((top - current*height)/height * 100)-100) + '%';
-
-        // $current.text(current);
-
-        window.visibleSequences = [current];
         TWEEN.update();
     }
 
@@ -152,23 +134,24 @@
         var el = el,
             id = id,
 
-            name = el.getAttribute('data-sequence-name'),
             parent = el.parentNode,
+            name = el.getAttribute('data-sequence-name'),
             numframes = parseInt(el.getAttribute('data-sequence-frames'), 10),
 
             current = 0,
             loaded = 0,
             preload = [],
             frames = [],
-            img = [],
             rev = [],
             ready = false;
 
         function onload() {
             loaded++;
+
             if ( loaded === numframes ) {
                 ready = true;
-                positionImages(id);
+                el.src = frames[0];
+                positionImages(el.height);
             }
         }
 
@@ -187,19 +170,6 @@
             push(frames, i);
         }
         
-        img.push(el);
-
-        // for ( var i in frames ) {
-        //     img.push( new Image() );
-        //     img[i].src = frames[i];
-        //     img[i].className = "lad";
-        //     parent.appendChild(img[i]);
-        // }
-
-        // console.log(frames);
-
-        // el.insertAdjacentHTML('afterend', htmlString);
-
         this.next = function() {
             if ( ready ) {
                 current = (current < (frames.length-1) ? current+1 : 0);
@@ -209,7 +179,6 @@
     }
 
 })(window, document, jQuery);
-
 
 /**
  * DOM is ready, yo.

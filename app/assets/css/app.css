@@ -366,6 +366,78 @@ nav li.active a, nav li:hover a {
 @media screen and (max-width: 767px) {
   /* 	Mobile styles
   /* ======================================= */
+  /* line 7, ../../../scss/partials/_mobile.scss */
+  .rapper.hip-hop-advice {
+    background: white url('../img/text/hip-hop-advice.png?1415197821') center 180px fixed no-repeat;
+    background-size: 300px auto;
+    z-index: 14;
+  }
+  /* line 13, ../../../scss/partials/_mobile.scss */
+  .rapper.jay-z {
+    background: #1a1a1f url('../img/text/jay-z.png?1415017124') center 180px fixed no-repeat;
+    background-size: 300px auto;
+    z-index: 13;
+  }
+  /* line 19, ../../../scss/partials/_mobile.scss */
+  .rapper.pharrell {
+    background: #f6bc39 url('../img/text/pharrell.png?1415017128') center 180px fixed no-repeat;
+    background-size: 300px auto;
+    z-index: 11;
+  }
+  /* line 25, ../../../scss/partials/_mobile.scss */
+  .rapper.rick-ross {
+    background: #dd3e51 url('../img/text/rick-ross.png?1415017132') center 180px fixed no-repeat;
+    background-size: 300px auto;
+    z-index: 10;
+  }
+  /* line 31, ../../../scss/partials/_mobile.scss */
+  .rapper.yeezy {
+    background: #61bca3 url('../img/text/yeezy.png?1415017135') center 180px fixed no-repeat;
+    background-size: 300px auto;
+    z-index: 8;
+  }
+  /* line 37, ../../../scss/partials/_mobile.scss */
+  .rapper.biggie {
+    background: #47b6d3 url('../img/text/biggie.png?1415017139') center 180px fixed no-repeat;
+    background-size: 300px auto;
+    z-index: 7;
+  }
+  /* line 43, ../../../scss/partials/_mobile.scss */
+  .rapper.tupac {
+    background: #7663a6 url('../img/text/tupac.png?1415017143') center 180px fixed no-repeat;
+    background-size: 300px auto;
+    z-index: 6;
+  }
+  /* line 49, ../../../scss/partials/_mobile.scss */
+  .rapper.drake {
+    background: #ee7443 url('../img/text/drake.png?1415017146') center 180px fixed no-repeat;
+    background-size: 300px auto;
+    z-index: 5;
+  }
+  /* line 55, ../../../scss/partials/_mobile.scss */
+  .rapper.two-chainz {
+    background: #309659 url('../img/text/two-chainz.png?1415017150') center 180px fixed no-repeat;
+    background-size: 300px auto;
+    z-index: 4;
+  }
+  /* line 61, ../../../scss/partials/_mobile.scss */
+  .rapper.eminem {
+    background: #3692d9 url('../img/text/eminem.png?1415017154') center 180px fixed no-repeat;
+    background-size: 300px auto;
+    z-index: 3;
+  }
+  /* line 67, ../../../scss/partials/_mobile.scss */
+  .rapper.lil-wayne {
+    background: #203861 url('../img/text/lil-wayne.png?1415017157') center 180px fixed no-repeat;
+    background-size: 300px auto;
+    z-index: 2;
+  }
+  /* line 73, ../../../scss/partials/_mobile.scss */
+  .rapper.snoop {
+    background: #dac9ad url('../img/text/snoop.png?1415017161') center 180px fixed no-repeat;
+    background-size: 300px auto;
+    z-index: 1;
+  }
 }
 @media screen and (max-width: 959px) {
   /* 	Tablet styles
